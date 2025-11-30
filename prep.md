@@ -60,11 +60,11 @@ umount /mnt
 ### Mount
 
 ```nix
-mount -o defaults,noatime,space_cache=v2,ssd,discard=async,conpress=zstd:3,subvol=@ /dev/nvme0n1p2 /mnt
+mount -o defaults,noatime,space_cache=v2,ssd,discard=async,compress=zstd:3,subvol=@ /dev/nvme0n1p2 /mnt
 mkdir /mnt/{boot,nix,home,swap}
-mount -o defaults,noatime,space_cache=v2,ssd,discard=async,conpress=zstd:1,subvol=@nix /dev/nvme0n1p2 /mnt/nix
-mount -o defaults,noatime,space_cache=v2,ssd,discard=async,conpress=zstd:3,subvol=@home /dev/nvme0n1p2 /mnt/home
-mount -o defaults,conpress=no,nodatacow,ssd,discard=async,subvol=@swap /dev/nvme0n1p2 /mnt/swap
+mount -o defaults,noatime,space_cache=v2,ssd,discard=async,conmress=zstd:1,subvol=@nix /dev/nvme0n1p2 /mnt/nix
+mount -o defaults,noatime,space_cache=v2,ssd,discard=async,conmress=zstd:3,subvol=@home /dev/nvme0n1p2 /mnt/home
+mount -o defaults,compress=no,nodatacow,ssd,discard=async,subvol=@swap /dev/nvme0n1p2 /mnt/swap
 mount /dev/nvme0n1p1 /mnt/boot
 ```
 
